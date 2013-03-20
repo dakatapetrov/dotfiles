@@ -1,0 +1,37 @@
+#!/bin/bash
+
+TEMPLATES_PATH="/home/dakata/.templates/"
+EXTENSION=`echo "$1" | sed -e 's/\.*\w*\.\(\w*\)/\1/g'`
+TEMPLATE=$TEMPLATES_PATH$EXTENSION"_template."$EXTENSION
+
+if [ $1 == "-e" ]
+then
+	TEMPLATE=$TEMPLATES_PATH$2"_template."$2
+	touch $TEMPLATE
+	exec vim $TEMPLATE
+fi
+
+if [ -f $1 ]
+then
+	echo "WARNING: File already exists!"
+	echo "exiting..."
+elif [ -f $TEMPLATE ]
+then
+	touch $1
+	`cat $TEMPLATE >> $1`
+	exec vim $1
+else
+	echo "WARNING: Template file missing."
+	echo ""
+	echo "Do you want to create it now?(y/n)"
+	read answer
+	if [ $answer == "y" ]
+	then
+		touch $TEMPLATE
+		exec vim $TEMPLATE
+	else
+		echo "$1 will be empty!"
+		touch $1
+		exec vim $1
+	fi
+fi
