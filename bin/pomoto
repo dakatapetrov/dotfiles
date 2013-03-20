@@ -1,0 +1,103 @@
+#!/bin/bash
+
+POMODORO="00:25:00"
+SHORT_BREAK="00:05:00"
+LONG_BREAK="00:15:00"
+NOTIFY="notify-send"
+P_MESSAGE="Pomodoro ended. Time for a break!"
+B_MESSAGE="Break ended. Time for work!"
+PLAY="mplayer /usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga"
+
+countdown()
+{
+        local OLD_IFS="${IFS}"
+        IFS=":"
+        local ARR=( $1 )
+        local SECONDS=$((  (ARR[0] * 60 * 60) + (ARR[1] * 60) + ARR[2]  ))
+        local START=$(date +%s)
+        local END=$((START + SECONDS))
+        local CUR=$START
+
+        while [[ $CUR -lt $END ]]
+        do
+                CUR=$(date +%s)
+                LEFT=$((END-CUR))
+
+                printf "\r%02d:%02d:%02d" \
+                        $((LEFT/3600)) $(( (LEFT/60)%60)) $((LEFT%60))
+
+                sleep 1
+        done
+        IFS="${OLD_IFS}"
+        echo "        "
+}
+
+timer()
+{
+	countdown $1
+	echo $2
+	$NOTIFY "$(echo $2)"
+	$PLAY > /dev/null 2>&1
+}
+
+session()
+{
+	local counter=0
+	while true
+	do
+		timer $1 "$P_MESSAGE"
+		if [[ $counter < 3 ]]
+		then
+			timer $2 "$B_MESSAGE"
+			counter=$((counter+1))
+		else
+			timer $3 "$B_MESSAGE"
+			counter=0
+		fi
+	done
+}
+
+
+print_help()
+{
+	echo "Usage:   pomoto [option]"
+	echo ""
+	echo "Options:"
+	echo " -n Starts a pomodoro session"
+	echo " -p Starts a pomodoro timer"
+	echo " -s Starts a shor break timer"
+	echo " -l Starts a long break timer"
+	echo " -d Starts a pomodoro session demo"
+	echo " -h Prints this help"
+	echo ""
+	echo "Starts a pomodoro session if no options given"
+}
+
+case "$1" in
+	-n)
+		session $POMODORO $SHORT_BREAK $LONG_BREAK
+		;;
+	-p)
+		timer $POMODORO
+		;;
+	-s)
+		timer $SHORT_BREAK
+		;;
+	-l)
+		timer $LONG_BREAK
+		;;
+	-d)
+		session "00:00:10" "00:00:03" "00:00:06"
+		;;
+	-h|--help)
+		print_help
+		;;
+	-*)
+		echo "Invalid argument $1"
+		echo ""
+		print_help
+		;;
+	*)
+		session $POMODORO $SHORT_BREAK $LONG_BREAK
+		;;
+esac
