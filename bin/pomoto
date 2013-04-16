@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Simple timer for the pomodoro technique.
+
 POMODORO="00:25:00"
 SHORT_BREAK="00:05:00"
 LONG_BREAK="00:15:00"

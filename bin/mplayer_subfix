@@ -1,15 +1,18 @@
 #!/bin/bash
+
+#Adds extra height to the picture, so that the subtitles are placed under it.`
+
 mplayer_string=""
 
-i=1
+i=2
 all_parameters=$#
 while [ $i -lt $all_parameters ]
   do
-    mplayer_string=$mplayer_string" "$1
+    mplayer_string=$mplayer_string" "$2
     shift
     i=$(( $i + 1 ))
 done
 
-width=`midentify "$1" | grep "ID_VIDEO_WIDTH=[0-9]*" | sed -r 's/^.{15}//'`
-height=`midentify "$1" | grep "ID_VIDEO_HEIGHT=[0-9]*" | sed -r 's/^.{16}//'`
-mplayer $mplayer_string -vf expand=$width:$[$height+200] "$1"
+width=`midentify "$2" | grep "ID_VIDEO_WIDTH=[0-9]*" | sed -r 's/^.{15}//'`
+height=`midentify "$2" | grep "ID_VIDEO_HEIGHT=[0-9]*" | sed -r 's/^.{16}//'`
+mplayer $mplayer_string -vf expand=$width:$[$height+$1] "$2"

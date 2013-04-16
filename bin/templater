@@ -1,6 +1,8 @@
 #!/bin/bash
 
-TEMPLATES_PATH="/home/dakata/.templates/"
+# A tool for creating files using templates.
+
+TEMPLATES_PATH="$HOME/.templates/"
 EXTENSION=`echo "$1" | sed -e 's/\.*\w*\.\(\w*\)/\1/g'`
 TEMPLATE=$TEMPLATES_PATH$EXTENSION"_template."$EXTENSION
 

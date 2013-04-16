@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# A simple alarm clock.
+
 PLAY="mplayer /usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga"
 
 countdown()

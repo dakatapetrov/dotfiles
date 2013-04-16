@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# A tool for scheduling system reboot, poweroff, halt or suspend.
+
 countdown()
 {
         local OLD_IFS="${IFS}"
@@ -58,7 +60,7 @@ case "$1" in
 	-s)
 		schedule "Suspending in:" $2 "suspend"
 		;;
-	--help)
+	-h|--help)
 		print_help
 		;;
 	*)
