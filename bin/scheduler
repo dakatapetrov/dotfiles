@@ -42,7 +42,7 @@ print_help()
 
 schedule()
 {
-	echo "$1"
+	echo $1
 	countdown $2
 	systemctl $3
 }

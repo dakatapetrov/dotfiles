@@ -38,7 +38,7 @@ timer()
 {
 	countdown $1
 	echo $2
-	$NOTIFY "$(echo $2)"
+	$NOTIFY "$2"
 	$PLAY > /dev/null 2>&1
 }
 
@@ -48,10 +48,10 @@ session()
 	while true
 	do
 		timer $1 "$P_MESSAGE"
-		if [[ $counter < 3 ]]
+		if [ $counter -lt 3 ]
 		then
 			timer $2 "$B_MESSAGE"
-			counter=$((counter+1))
+			counter=$[ $counter + 1 ]
 		else
 			timer $3 "$B_MESSAGE"
 			counter=0

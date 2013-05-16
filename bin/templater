@@ -6,7 +6,7 @@ TEMPLATES_PATH="$HOME/.templates/"
 EXTENSION=`echo "$1" | sed -e 's/\.*\w*\.\(\w*\)/\1/g'`
 TEMPLATE=$TEMPLATES_PATH$EXTENSION"_template."$EXTENSION
 
-if [ $1 == "-e" ]
+if [ $1 = "-e" ]
 then
 	TEMPLATE=$TEMPLATES_PATH$2"_template."$2
 	touch $TEMPLATE
@@ -27,7 +27,7 @@ else
 	echo ""
 	echo "Do you want to create it now?(y/n)"
 	read answer
-	if [ $answer == "y" ]
+	if [ $answer = "y" ]
 	then
 		touch $TEMPLATE
 		exec vim $TEMPLATE
