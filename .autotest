@@ -1,0 +1,17 @@
+require 'autotest/timestamp'
+require 'test_notifier/runner/autotest'
+
+class Autotest
+  def get_to_green
+    begin
+      rerun_all_tests
+      wait_for_changes unless all_good
+    end until all_good
+  end
+end
+
+Autotest.add_hook :initialize do |autotest|
+  %w{.git .db .css}.each do |exception|
+    autotest.add_exception(exception)
+  end
+end
