@@ -1,8 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/home/dakata/.config/awesome/themes/dakata'
-let g:netrw_dirhist_2='/home/dakata/Documents/Development/Ruby/alexandra/public'
-let g:netrw_dirhist_3='/home/dakata/Documents/Development/Ruby/game/zenban/lib/zenban'
-let g:netrw_dirhist_4='/home/dakata/.oh-my-zsh'
-let g:netrw_dirhist_5='/home/dakata/.fontconfig'
-let g:netrw_dirhist_6='/home/dakata/Documents/Development/Clojure/FMI/Programming in Clojure/Challenges'
