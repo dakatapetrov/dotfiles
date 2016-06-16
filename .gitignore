@@ -4,3 +4,8 @@
 *.un~
 Session.vim
 .netrwhist
+
+# vim folders
+.vim/colors/
+.vim/bundle/
+.vim/autoload/
