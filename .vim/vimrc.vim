@@ -30,13 +30,14 @@ Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'ervandew/supertab'
 Bundle 'scrooloose/nerdtree'
 Bundle 'majutsushi/tagbar'
+Bundle 'reedes/vim-colors-pencil'
 
 " Setup Pathogen
 execute pathogen#infect()
 
 filetype plugin indent on
 
-colorscheme molokai
+colorscheme pencil
 
 map <F2> :NERDTreeToggle<CR>
 map <F3> :TagbarToggle<CR>
