@@ -1,43 +1,49 @@
-syntax on
-filetype off
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
-set number
-set nocompatible
-set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
-
+" set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#rc()
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle
 Plugin 'VundleVim/Vundle.vim'
 
 " My Bundles here:
-Bundle 'guns/vim-clojure-static'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'tpope/vim-classpath'
-Bundle 'tpope/vim-fireplace'
-Bundle 'tpope/vim-sensible'
-Bundle 'tpope/vim-markdown'
-Bundle 'tpope/vim-git'
-Bundle 'tpope/vim-commentary'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-fugitive'
-Bundle 'bronson/vim-trailing-whitespace'
-Bundle 'ervandew/supertab'
-Bundle 'scrooloose/nerdtree'
-Bundle 'majutsushi/tagbar'
-Bundle 'reedes/vim-colors-pencil'
+Plugin 'guns/vim-clojure-static'
+Plugin 'Lokaltog/vim-powerline'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-classpath'
+Plugin 'tpope/vim-fireplace'
+Plugin 'tpope/vim-sensible'
+Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-git'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-fugitive'
+Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'ervandew/supertab'
+Plugin 'scrooloose/nerdtree'
+Plugin 'majutsushi/tagbar'
 
-" Setup Pathogen
-execute pathogen#infect()
 
-filetype plugin indent on
+Plugin 'reedes/vim-colors-pencil'
+Plugin 'jnurmine/Zenburn'
 
-colorscheme pencil
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+syntax on
+set number
+set relativenumber
+set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+" colorscheme pencil
+colorscheme zenburn
 
 map <F2> :NERDTreeToggle<CR>
 map <F3> :TagbarToggle<CR>
