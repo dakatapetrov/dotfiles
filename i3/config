@@ -1,0 +1,326 @@
+# Modifier
+set $mod Mod4
+
+# A list of my constants
+set $soundCardId 0
+
+set $workspace1 "1 "
+set $workspace2 "2 "
+set $workspace3 "3 "
+set $workspace4 "4 "
+set $workspace5 "5 "
+set $workspace6 "6 "
+set $workspace7 "7 "
+set $workspace8 "8 "
+set $workspace9 "9 "
+set $workspace10 "10 "
+
+set $outputPrimary   "eDP-1"
+set $outputHDMI   "HDMI-1"
+
+set $sinkLocal 0
+set $sinkSurround51 "tunnel.raspberrypi.local.alsa_output.usb-0d8c_USB_Sound_Device-00-Device.analog-surround-51"
+
+set $modeScreen " screen"
+set $modeMedia " media"
+
+
+#
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+# font pango:monospace 8
+# font
+# font pango:System San Francisco Display 9
+
+# This font is widely installed, provides lots of unicode glyphs, right-to-left
+# text rendering and scalability on retina/hidpi displays (thanks to pango).
+font pango:DejaVu Sans Mono 9
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# start a terminal
+bindsym $mod+Return exec i3-sensible-terminal
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# Start rofi
+bindsym $mod+t exec --no-startup-id rofi -show window
+bindsym $mod+d exec --no-startup-id rofi -show run
+
+# change focus
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+semicolon move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# map workspaces to outputs
+workspace $workspace1   output $outputPrimary
+workspace $workspace2   output $outputPrimary
+workspace $workspace3   output $outputPrimary
+workspace $workspace4   output $outputPrimary
+workspace $workspace5   output $outputPrimary
+workspace $workspace6   output $outputPrimary
+workspace $workspace7   output $outputPrimary
+workspace $workspace8   output $outputPrimary
+workspace $workspace9   output $outputPrimary
+workspace $workspace10  output $outputPrimary
+
+# Assign clients to workspaces
+# assign [class="URxvt"] → $workspace2
+assign [class="TelegramDesktop"] → $workspace1
+assign [class="Google-chrome"] → $workspace3
+assign [class="Spotify"] → $workspace5
+assign [class="Pcmanfm"] → $workspace6
+
+# A hack fo Spotify
+for_window [class="Spotify"] move to workspace $workspace5
+
+# switch to workspace
+bindsym $mod+1 workspace $workspace1
+bindsym $mod+2 workspace $workspace2
+bindsym $mod+3 workspace $workspace3
+bindsym $mod+4 workspace $workspace4
+bindsym $mod+5 workspace $workspace5
+bindsym $mod+6 workspace $workspace6
+bindsym $mod+7 workspace $workspace7
+bindsym $mod+8 workspace $workspace8
+bindsym $mod+9 workspace $workspace9
+bindsym $mod+0 workspace $workspace10
+
+workspace_auto_back_and_forth yes
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $workspace1
+bindsym $mod+Shift+2 move container to workspace $workspace2
+bindsym $mod+Shift+3 move container to workspace $workspace3
+bindsym $mod+Shift+4 move container to workspace $workspace4
+bindsym $mod+Shift+5 move container to workspace $workspace5
+bindsym $mod+Shift+6 move container to workspace $workspace6
+bindsym $mod+Shift+7 move container to workspace $workspace7
+bindsym $mod+Shift+8 move container to workspace $workspace8
+bindsym $mod+Shift+9 move container to workspace $workspace9
+bindsym $mod+Shift+0 move container to workspace $workspace10
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume $sinkLocal +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume $sinkLocal -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute $sinkLocal toggle # mute sound
+
+# Sreen brightness controls
+# bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+# bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+
+# Touchpad controls
+# bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
+
+# Media player controls
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioStop exec playerctl stop
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+# # colors
+# class                 border  backgr. text    indicator
+# client.focused              #688060 #688060 #303030 #ffcfaf
+# client.focused_inactive     #3f3f3f #3F3F3F #7f9f7f #3f3f3f
+# client.unfocused            #3f3f3f #3F3F3F #DCDCCC #3f3f3f
+# client.urgent               #dca3a3 #dca3a3 #DCDCCC #3f3f3f
+# Colors
+# class                 border  backgr. text
+# client.focused          #525252 #1E1E1E #F5DEB3
+# client.focused          #525252 #3F3F3F #DCDCCC
+# client.focused_inactive #333333 #0F0F0F #E3CCA1
+# client.unfocused        #333333 #010101 #85753A
+# client.urgent           #FFFFFF #900000 #F5DEB3
+# client.focused  #d2d39b #3f3f3f #d2d39b
+# client.focused  #8f8f8f #3f3f3f #d2d39b
+client.focused  #8faf9f #8faf9f #000d18
+client.focused_inactive   #F5DEB3 #0F0F0F #dcdcdc
+# client.unfocused #8f8f8f #3f3f3f #9fafaf
+client.unfocused #8f8f8f #3f3f3f #dcdccc
+# client.urgent   #dca3a3 #3f3f3f #dca3a3
+client.urgent   #dca3a3 #dca3a3 #000d18
+
+new_window pixel 3
+hide_edge_borders smart
+
+		# focused_workspace  #d2d39b #3f3f3f #d2d39b
+		# active_workspace   #F5DEB3 #0F0F0F #dcdcdc
+		# inactive_workspace #3f3f3f #3f3f3f #9fafaf
+		# urgent_workspace   #dca3a3 #3f3f3f #dca3a3
+		# focused_workspace  #F5DEB3 #666666
+		# active_workspace   #F5DEB3 #0F0F0F
+		# inactive_workspace #F5DEB3 #1E1E1E
+		# urgent_workspace   #ffffff #900000
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+mode $modeMedia {
+	    bindsym k exec --no-startup-id pactl set-sink-volume $sinkLocal +5% #increase sound
+	    bindsym j exec --no-startup-id pactl set-sink-volume $sinkLocal -5% #decrease sound
+	    bindsym m exec --no-startup-id pactl set-sink-mute $sinkLocal toggle
+
+	    bindsym Shift+k exec --no-startup-id pactl set-sink-volume $sinkSurround51 +5% #increase sound
+	    bindsym Shift+j exec --no-startup-id pactl set-sink-volume $sinkSurround51 -5% #decrease sound
+	    bindsym Shift+m exec --no-startup-id pactl set-sink-mute $sinkSurround51 toggle
+
+
+	    bindsym q exec --no-startup-id pactl set-default-sink $sinkLocal
+	    bindsym w exec --no-startup-id pactl set-default-sink $sinkSurround51
+
+	    bindsym x exec playerctl play
+	    bindsym t exec playerctl play-pause
+	    bindsym s exec playerctl stop
+	    bindsym n exec playerctl next
+	    bindsym p exec playerctl previous
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+m mode $modeMedia;
+
+mode $modeScreen {
+        # brightness
+	    bindsym k exec --no-startup-id xbacklight +10
+	    bindsym j exec --no-startup-id xbacklight -10
+
+        # switch between HD and UHD
+	    bindsym h exec --no-startup-id xrandr --output eDP-1 --auto
+	    bindsym l exec --no-startup-id xrandr --output eDP-1 --mode 1920x1080
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+	    bindsym Escape mode "default"
+}
+bindsym $mod+Shift+b mode $modeScreen;
+
+# My bindings
+
+# bindsym $mod+Shift+s exec "i3lock -i ~/Pictures/Wallpapers/buzdludzha-scaled.png -c '#ffffff' -o '#6666ff' -w '#ff4c4c' -l '#9999ff' -e --24; xset dpms force off"
+# bindsym $mod+Shift+s exec "i3lock -i ~/Pictures/Wallpapers/3d-fox-zenburn.png -c '#ffffff' -o '#6666ff' -w '#ff4c4c' -l '#9999ff' -e --24; xset dpms force off"
+bindsym $mod+Shift+s exec "i3lock -i ~/Pictures/Wallpapers/low-poly-fox-zenburn.png -c '#ffffff' -o '#6666ff' -w '#ff4c4c' -l '#9999ff' -e --24; xset dpms force off"
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+	position top
+    # status_command i3status
+    separator_symbol " / "
+    status_command i3blocks -c "$HOME/.config/i3/i3blocks.conf"
+	colors {
+        # background         $transparent
+        # background #3f3f3f
+        # statusline #dcdccc
+
+        # focused_workspace  #93b3a3 #3f3f3f #93b3a3
+        # active_workspace   #ffcfaf #3f3f3f #ffcfaf
+        # inactive_workspace #636363 #3f3f3f #dcdccc
+        # urgent_workspace   #dca3a3 #3f3f3f #dca3a3
+
+		# background #0F0F0F
+		# statusline #F5DEB3
+		background #3F3F3F
+		statusline #DCDCCC
+		# statusline #dca3a3
+        separator #8f8f8f
+
+		# focused_workspace  #F5DEB3 #666666 #93b3a3
+		# active_workspace   #F5DEB3 #0F0F0F #ffcfaf
+		# inactive_workspace #F5DEB3 #1E1E1E #dcdccc
+		# urgent_workspace   #ffffff #900000 #dca3a3
+		# focused_workspace  #d2d39b #3f3f3f #d2d39b
+		focused_workspace  #8faf9f #8faf9f #000d18
+		active_workspace   #F5DEB3 #0F0F0F #dcdcdc
+		# inactive_workspace #3f3f3f #3f3f3f #9fafaf
+		inactive_workspace #3f3f3f #3f3f3f #dcdccc
+		urgent_workspace   #dca3a3 #dca3a3 #000d18
+	}
+}
+
+# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id setxkbmap -option grp:alt_shift_toggle,grp_led:scroll us,bg -variant ,phonetic
+# exec_always --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/buzdludzha-scaled.png
+# exec_always --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/3d-fox-zenburn.png
+exec_always --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/low-poly-fox-zenburn.png
+exec pcmanfm -d
+exec nm-applet
+exec redshift-gtk
