@@ -29,10 +29,13 @@ Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'ervandew/supertab'
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
+" Plugin 'vim-airline/vim-airline'
+" Plugin 'vim-airline/vim-airline-themes'
 
 
 Plugin 'reedes/vim-colors-pencil'
 Plugin 'jnurmine/Zenburn'
+Plugin 'morhetz/gruvbox'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -50,3 +53,5 @@ map <F3> :TagbarToggle<CR>
 
 let g:tagbar_compact   = 1
 let g:tagbar_autofocus = 1
+
+" let g:airline_theme='gruvbox'
