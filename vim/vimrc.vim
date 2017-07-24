@@ -6,7 +6,7 @@ call plug#begin('~/.vim/plugged')
 
 " My Bundles here:
 Plug 'guns/vim-clojure-static'
-Plug 'Lokaltog/vim-powerline'
+" Plug 'Lokaltog/vim-powerline'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-classpath'
 Plug 'tpope/vim-fireplace'
@@ -23,8 +23,8 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'ervandew/supertab'
 Plug 'scrooloose/nerdtree'
 Plug 'majutsushi/tagbar'
-" Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/syntastic'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -64,3 +64,5 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+let g:airline_powerline_fonts = 1
