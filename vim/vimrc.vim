@@ -1,44 +1,43 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
-" let Vundle manage Vundle
-Plugin 'VundleVim/Vundle.vim'
+call plug#begin('~/.vim/plugged')
 
 " My Bundles here:
-Plugin 'guns/vim-clojure-static'
-Plugin 'Lokaltog/vim-powerline'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'tpope/vim-classpath'
-Plugin 'tpope/vim-fireplace'
-Plugin 'tpope/vim-sensible'
-Plugin 'tpope/vim-markdown'
-Plugin 'tpope/vim-git'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-fugitive'
-Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'ervandew/supertab'
-Plugin 'scrooloose/nerdtree'
-Plugin 'majutsushi/tagbar'
-" Plugin 'vim-airline/vim-airline'
-" Plugin 'vim-airline/vim-airline-themes'
+Plug 'guns/vim-clojure-static'
+Plug 'Lokaltog/vim-powerline'
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-classpath'
+Plug 'tpope/vim-fireplace'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-git'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-fugitive'
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'ervandew/supertab'
+Plug 'scrooloose/nerdtree'
+Plug 'majutsushi/tagbar'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
+Plug 'scrooloose/syntastic'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 
 
-Plugin 'reedes/vim-colors-pencil'
-Plugin 'jnurmine/Zenburn'
-Plugin 'morhetz/gruvbox'
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
+Plug 'reedes/vim-colors-pencil'
+Plug 'jnurmine/Zenburn'
+Plug 'morhetz/gruvbox'
+
+call plug#end()
+
 filetype plugin indent on    " required
 
 syntax on
@@ -55,3 +54,13 @@ let g:tagbar_compact   = 1
 let g:tagbar_autofocus = 1
 
 " let g:airline_theme='gruvbox'
+
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
