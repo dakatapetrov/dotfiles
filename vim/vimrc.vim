@@ -2,7 +2,7 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 
-" Plugins
+" Plugins {{{
 call plug#begin('~/.vim/plugged')
 
 " General
@@ -53,6 +53,7 @@ Plug 'jnurmine/Zenburn'
 Plug 'morhetz/gruvbox'
 
 call plug#end()
+" end Plugins }}}
 
 filetype plugin indent on    " required
 
@@ -72,3 +73,25 @@ let g:airline_powerline_fonts = 1
 
 set hidden
 set cursorline
+
+" Mappings {{{
+" Set the mapleader
+let mapleader = " "
+let maplocalleader = " "
+
+nnoremap <Leader>p "+p
+vnoremap <Leader>y "+y
+
+nnoremap <Leader>b :Buffers<CR>
+nnoremap <Leader>f :FZF<CR>
+nnoremap <Leader>s :Ag<CR>
+
+" Press jk instead Esc in insert mode
+inoremap jk <Esc>
+inoremap jj <Esc>
+
+set langmap+=чявертъуиопшщасдфгхйклзьцжбнмЧЯВЕРТЪУИОПШЩАСДФГХЙКЛЗѝЦЖБНМ;`qwertyuiop[]asdfghjklzxcvbnm~QWERTYUIOP{}ASDFGHJKLZXCVBNM,ю\\,Ю\|,
+" end Mappings }}}
+
+" Highlight the 100th column
+set colorcolumn=100
