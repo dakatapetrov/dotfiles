@@ -1,1 +1,1 @@
-Guifont UbuntuMonoDerivativePowerline Nerd Font:h14
+Guifont Ubuntu Mono derivative Powerline:h12
