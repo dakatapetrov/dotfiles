@@ -1,0 +1,233 @@
+/* Xft.dpi: 282 */
+Xft.dpi: 109
+Xft.autohint: 0
+Xft.lcdfilter:  lcddefault
+Xft.hintstyle:  hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+
+! urxvt.font:  xft:DejaVuSansMono:size=10
+URxvt.font:           xft:Ubuntu Mono derivative Powerline:pixelsize=48:antialias=true:hinting=true
+URxvt.boldFont:       xft:Ubuntu Mono derivative Powerline:bold:pixelsize=48:antialias=true:hinting=true
+URxvt.italicFont:     xft:Ubuntu Mono derivative Powerline:italic:pixelsize=48:antialias=true:hinting=true
+URxvt.boldItalicFont: xft:Ubuntu Mono derivative Powerline:bold:italic:pixelsize=48:antialias=true:hinting=true
+
+! General colors
+# *background: #0F0F0F
+# *foreground: #F5DEB3
+! *background: #3F3F3F
+! *foreground: #DCDCCC
+# *color0: #0F0F0F
+! *color0: #3F3F3F
+! *color1: #9e1828
+! *color2: #aece92
+! *color3: #968a38
+! *color4: #414171
+! *color5: #963c59
+! *color6: #418179
+! *color7: #bebebe
+! *color8: #666666
+! *color9: #cf6171
+! *color10: #c5f779
+! *color11: #fff796
+! *color12: #4186be
+! *color13: #cf9ebe
+! *color14: #71bebe
+! *color15: #efefef
+! *cursorColor: magenta
+
+# #define S_base03        #002b36
+# #define S_base02        #073642
+# #define S_base01        #586e75
+# #define S_base00        #657b83
+# #define S_base0         #839496
+# #define S_base1         #93a1a1
+# #define S_base2         #eee8d5
+# #define S_base3         #fdf6e3
+# 
+# *background:            S_base03
+# *foreground:            S_base0
+# *fadeColor:             S_base03
+# *cursorColor:           S_base1
+# *pointerColorBackground:S_base01
+# *pointerColorForeground:S_base1
+# 
+# #define S_yellow        #b58900
+# #define S_orange        #cb4b16
+# #define S_red           #dc322f
+# #define S_magenta       #d33682
+# #define S_violet        #6c71c4
+# #define S_blue          #268bd2
+# #define S_cyan          #2aa198
+# #define S_green         #859900
+# 
+# !! black dark/light
+# *color0:                S_base02
+# *color8:                S_base03
+# 
+# !! red dark/light
+# *color1:                S_red
+# *color9:                S_orange
+# 
+# !! green dark/light
+# *color2:                S_green
+# *color10:               S_base01
+# 
+# !! yellow dark/light
+# *color3:                S_yellow
+# *color11:               S_base00
+# 
+# !! blue dark/light
+# *color4:                S_blue
+# *color12:               S_base0
+# 
+# !! magenta dark/light
+# *color5:                S_magenta
+# *color13:               S_violet
+# 
+# !! cyan dark/light
+# *color6:                S_cyan
+# *color14:               S_base1
+# 
+# !! white dark/light
+# *color7:                S_base2
+# *color15:               S_base3
+
+/* ! Zenburn color-scheme */
+/* URxvt.background              :#1f1f1f */
+/* URxvt.foreground              :#dcdccc */
+
+/* ! black + red */
+/* !URxvt.color0                 :#3f3f3f */
+/* URxvt.color0                  :#1f1f1f */
+/* URxvt.color1                  :#705050 */
+
+/* ! green + yellow */
+/* URxvt.color2                  :#60b48a */
+/* URxvt.color3                  :#dfaf8f */
+
+/* ! blue + purple */
+/* URxvt.color4                  :#506070 */
+/* URxvt.color5                  :#dc8cc3 */
+
+/* ! cyan + white */
+/* URxvt.color6                  :#8cd0d3 */
+/* URxvt.color7                  :#dcdccc */
+
+/* ! bright-black + bright-red */
+/* URxvt.color8                  :#709080 */
+/* URxvt.color9                  :#dca3a3 */
+
+/* ! bright-green + bright-yellow */
+/* URxvt.color10                 :#c3bf9f */
+/* URxvt.color11                 :#f0dfaf */
+
+/* ! bright-blue + bright-purple */
+/* URxvt.color12                 :#94bff3 */
+/* URxvt.color13                 :#ec93d3 */
+
+/* ! bright-cyan + bright-white */
+/* URxvt.color14                 :#93e0e3 */
+/* URxvt.color15                 :#ffffff */
+
+# Zenburn alternative color-scheme
+!URxvt*cursorColor: magenta
+!URxvt*background: #0F0F0F
+!URxvt*background: #3F3F3F
+!URxvt*foreground: #F5DEB3
+!URxvt*foreground: #DCDCCC
+!URxvt*color0: #0F0F0F
+!URxvt*color1: #9e1828
+!URxvt*color2: #aece92
+!URxvt*color3: #968a38
+!URxvt*color4: #414171
+!URxvt*color5: #963c59
+!URxvt*color6: #418179
+!URxvt*color7: #bebebe
+!URxvt*color8: #666666
+!URxvt*color9: #cf6171
+!URxvt*color10: #c5f779
+!URxvt*color11: #fff796
+!URxvt*color12: #4186be
+!URxvt*color13: #cf9ebe
+!URxvt*color14: #71bebe
+!URxvt*color15: #efefef
+
+! ----------------------------------------------------------------- Zenburn
+! `man urxvt` for the customization
+! source https://gist.github.com/cqpx/1436584
+URxvt*depth:                  32
+URxvt*geometry:               90x30
+URxvt*transparent:            false
+URxvt*fading:                 0
+/* URxvt*font:                   xft:FiraCode:size=10 */
+URxvt*letterSpace:            -1
+URxvt*scrollBar:              false
+URxvt*internalBorder:         0
+URxvt*jumpScroll:             true
+URxvt*visualBell:             false
+URxvt*saveLines:              65535
+URxvt*termName:               rxvt-unicode
+
+! Pointer
+URxvt*pointerBlank:           true
+/* URxvt*pointerColorBackground: #586e75 */
+/* URxvt*pointerColorForeground: #93a1a1 */
+
+! Cursor
+/* URxvt*cursorColor:            #dc8cc3 */
+
+/* URxvt.internalBorder:         0 */
+/* URxvt*background:             #3f3f3f */
+/* URxvt*foreground:             #dcdccc */
+! URxvt*colorUL:                #366060
+/* URxvt*underlineColor:         #dfaf8f */
+
+!URxvt*color0:                 #3f3f3f
+!URxvt*color1:                 #cc9393
+!URxvt*color2:                 #7f9f7f
+!URxvt*color3:                 #d0bf8f
+!URxvt*color4:                 #6ca0a3
+!URxvt*color5:                 #dc8cc3
+!URxvt*color6:                 #93e0e3
+!URxvt*color7:                 #dcdccc
+!!URxvt*color8:                 #000000
+!URxvt*color8:                 #666666
+!URxvt*color9:                 #dca3a3
+!URxvt*color10:                #bfebbf
+!URxvt*color11:                #f0dfaf
+!URxvt*color12:                #8cd0d3
+!URxvt*color13:                #dc8cc3
+!URxvt*color14:                #93e0e3
+!URxvt*color15:                #ffffff
+
+! rofi -- dmenu clone
+rofi.opacity:  100
+rofi.width:    50
+rofi.lines:    5
+/* rofi.dpi: 282 */
+rofi.dpi: 109
+/* rofi.font:     DejaVu Sans Mono 24 */
+rofi.font:     UbuntuMonoDerivativePowerline 24
+rofi.location: 0
+rofi.padding:  5
+
+rofi.terminal: urxvt
+rofi.sidebar-mode:                   true
+
+
+rofi.color-enabled: true
+
+!                  'bg',   'border'
+rofi.color-window: #3F3F3F,#000000
+
+! State:           bg,     fg,     bgalt   hlbg,   hlfg
+! zenburn:         bg,     fg,     bg-05,  bg+1,   fg+1
+rofi.color-normal: #3F3F3F,#DCDCCC,#383838,#4F4F4F,#FFFFEF
+!                  blue-4, fg,     blue-5, blue-3, fg+1
+rofi.color-active: #4C7073,#DCDCCC,#366060,#5C888B,#FFFFEF
+!                  red-4,  fg,     red-5,  red-3,  fg+1
+rofi.color-urgent: #8C5353,#DCDCCC,#7C4343,#9C6363,#FFFFEF
+
+!(call-process-shell-command "xrdb -load ~/.Xresources")
