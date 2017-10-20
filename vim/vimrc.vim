@@ -51,6 +51,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'reedes/vim-colors-pencil'
 Plug 'jnurmine/Zenburn'
 Plug 'morhetz/gruvbox'
+Plug 'altercation/vim-colors-solarized'
+Plug 'JulioJu/neovim-qt-colors-solarized-truecolor-only'
 
 call plug#end()
 " end Plugins }}}
