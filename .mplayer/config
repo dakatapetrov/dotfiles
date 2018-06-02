@@ -12,3 +12,7 @@ subfont-blur="1" #Slight blur
 
 cache=8192
 cache-min=4
+
+# VDPAU
+vo=vdpau,
+vc=ffh264vdpau,ffmpeg12vdpau,ffodivxvdpau,ffwmv3vdpau,ffvc1vdpau,ffhevcvdpau

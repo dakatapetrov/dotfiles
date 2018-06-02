@@ -39,6 +39,7 @@ set $modeMedia " media"
 # font pango:Ubuntu Mono 9
 font pango:UbuntuMonoDerivativePowerline 14
 
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -332,3 +333,4 @@ exec_always --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/low-poly-fox-ze
 exec pcmanfm -d
 exec nm-applet
 exec redshift-gtk
+exec lxsession
