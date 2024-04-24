@@ -1,0 +1,58 @@
+*{
+    font-family: 'Iosevka Nerd Font Propo';
+    font-size: 18px;
+}
+
+window {
+    background-color: #8FAF9F;
+}
+
+#input {
+    margin: 5px;
+    border-radius: 0px;
+    border: none;
+    border-bottom: 3px solid #333333;
+    background-color: #3F3F3F;
+    color: #FFFFE0;
+    outline:none !important;
+    outline-width: 0 !important;
+    box-shadow: none;
+}
+
+#inner-box {
+    background-color: #3F3F3F;
+
+}
+
+#outer-box {
+    margin: 5px;
+    padding:20px;
+    background-color: #3F3F3F;
+}
+
+#scroll {
+    background-color: #3F3F3F;
+}
+
+#text {
+    padding: 5px;
+    font-weight: normal;
+    color: #DCDCCC;
+}
+
+#entry:nth-child(odd){
+    background-color: #3F3F3F;
+}
+
+#entry:nth-child(even){
+    background-color: #4F4F4F;
+}
+
+#entry:selected {
+    background-color: #8FAF9F;
+}
+
+#text:selected {
+    font-weight: bold;
+    color: #000D18;
+}
