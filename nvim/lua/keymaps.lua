@@ -10,3 +10,9 @@ vim.keymap.set('n', 'gb', "<C-^>")
 -- nvim-tree
 local api = require('nvim-tree.api')
 vim.keymap.set('n', '<leader>t', api.tree.focus, {})
+
+-- copy/paste to clipboard
+vim.keymap.set('v', '<leader>y', '"+y', {})
+vim.keymap.set('n', '<leader>yy', '"+yy', {})
+vim.keymap.set('n', '<leader>p', '"+p', {})
+vim.keymap.set('n', '<leader>P', '"+P', {})
